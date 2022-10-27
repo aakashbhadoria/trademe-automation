@@ -1,0 +1,92 @@
+{
+	"info": {
+		"_postman_id": "48580c49-0519-43e4-8404-ff0f79a13fe1",
+		"name": "trademesandbox",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://secure.tmsandbox.co.nz/Oauth/RequestToken?scope=MyTradeMeRead,MyTradeMeWrite",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "OAuth oauth_callback=https%3A%2F%2Fwww.website-tm-access.co.nz%2Ftrademe-callback, oauth_consumer_key=4E0D082355116884742E5F33B8A199F411, oauth_signature_method=PLAINTEXT, oauth_signature=160FCF77971DC92A38596288DB071A8CA5%26",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "https://secure.tmsandbox.co.nz/Oauth/RequestToken?scope=MyTradeMeWrite",
+					"protocol": "https",
+					"host": [
+						"secure",
+						"tmsandbox",
+						"co",
+						"nz"
+					],
+					"path": [
+						"Oauth",
+						"RequestToken"
+					],
+					"query": [
+						{
+							"key": "scope",
+							"value": "MyTradeMeWrite"
+						}
+					]
+				},
+				"description": "First call to get token"
+			},
+			"response": []
+		},
+		{
+			"name": "https://api.trademe.co.nz/v1/Selling.json",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "OAuth oauth_consumer_key=4E0D082355116884742E5F33B8A199F411, oauth_token=86EE20AFF655C34CB34873449A5F98020B, oauth_signature_method=PLAINTEXT, oauth_signature=160FCF77971DC92A38596288DB071A8CA5%265333F645901F003CD98A69589C45BBC158",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Category\": \"ABC\",\r\n  \"Title\": \"ABC\",\r\n  \"Subtitle\": \"ABC\",\r\n  \"Description\": [\r\n    \"ABC\",\r\n    \"ABC\"\r\n  ],\r\n  \"StartPrice\": 123.0,\r\n  \"ReservePrice\": 123.0,\r\n  \"BuyNowPrice\": 123.0,\r\n  \"Duration\": 0,\r\n  \"EndDateTime\": \"\\/Date(1514764800)\\/\",\r\n  \"Pickup\": 0,\r\n  \"PickupSuburbId\": 123,\r\n  \"IsBrandNew\": false,\r\n  \"AuthenticatedMembersOnly\": false,\r\n  \"IsClassified\": false,\r\n  \"OpenHomes\": [\r\n    {\r\n      \"Start\": \"\\/Date(1514764800)\\/\",\r\n      \"End\": \"\\/Date(1514764800)\\/\"\r\n    },\r\n    {\r\n      \"Start\": \"\\/Date(1514764800)\\/\",\r\n      \"End\": \"\\/Date(1514764800)\\/\"\r\n    }\r\n  ],\r\n  \"SendPaymentInstructions\": false,\r\n  \"OtherPaymentMethod\": \"ABC\",\r\n  \"IsOrNearOffer\": false,\r\n  \"IsPriceOnApplication\": false,\r\n  \"IsBold\": false,\r\n  \"IsFeatured\": false,\r\n  \"IsHomepageFeatured\": false,\r\n  \"HasGallery\": false,\r\n  \"HasGalleryPlus\": false,\r\n  \"Quantity\": 123,\r\n  \"IsFlatShippingCharge\": false,\r\n  \"HasAgreedWithLegalNotice\": false,\r\n  \"AutoRelistLimit\": 123,\r\n  \"HomePhoneNumber\": \"ABC\",\r\n  \"MobilePhoneNumber\": \"ABC\",\r\n  \"IsHighlighted\": false,\r\n  \"HasSuperFeature\": false,\r\n  \"PhotoIds\": [\r\n    123,\r\n    123\r\n  ],\r\n  \"ShippingOptions\": [\r\n    {\r\n      \"Type\": 0,\r\n      \"Price\": 123.0,\r\n      \"Method\": \"ABC\",\r\n      \"ShippingId\": 123,\r\n      \"TaxesIncluded\": [\r\n        {\r\n          \"Type\": 1,\r\n          \"Country\": \"ABC\",\r\n          \"Name\": \"ABC\",\r\n          \"FlatRate\": 123.0,\r\n          \"Description\": \"ABC\",\r\n          \"IsSellRestrictionsEffective\": false,\r\n          \"IsTaxEffective\": false,\r\n          \"IsApplied\": false,\r\n          \"TaxAmount\": 123.0,\r\n          \"WasPriceTaxAmount\": 123.0\r\n        },\r\n        {\r\n          \"Type\": 1,\r\n          \"Country\": \"ABC\",\r\n          \"Name\": \"ABC\",\r\n          \"FlatRate\": 123.0,\r\n          \"Description\": \"ABC\",\r\n          \"IsSellRestrictionsEffective\": false,\r\n          \"IsTaxEffective\": false,\r\n          \"IsApplied\": false,\r\n          \"TaxAmount\": 123.0,\r\n          \"WasPriceTaxAmount\": 123.0\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"Type\": 0,\r\n      \"Price\": 123.0,\r\n      \"Method\": \"ABC\",\r\n      \"ShippingId\": 123,\r\n      \"TaxesIncluded\": [\r\n        {\r\n          \"Type\": 1,\r\n          \"Country\": \"ABC\",\r\n          \"Name\": \"ABC\",\r\n          \"FlatRate\": 123.0,\r\n          \"Description\": \"ABC\",\r\n          \"IsSellRestrictionsEffective\": false,\r\n          \"IsTaxEffective\": false,\r\n          \"IsApplied\": false,\r\n          \"TaxAmount\": 123.0,\r\n          \"WasPriceTaxAmount\": 123.0\r\n        },\r\n        {\r\n          \"Type\": 1,\r\n          \"Country\": \"ABC\",\r\n          \"Name\": \"ABC\",\r\n          \"FlatRate\": 123.0,\r\n          \"Description\": \"ABC\",\r\n          \"IsSellRestrictionsEffective\": false,\r\n          \"IsTaxEffective\": false,\r\n          \"IsApplied\": false,\r\n          \"TaxAmount\": 123.0,\r\n          \"WasPriceTaxAmount\": 123.0\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"PaymentMethods\": [\r\n    0,\r\n    0\r\n  ],\r\n  \"Attributes\": [\r\n    {\r\n      \"Name\": \"ABC\",\r\n      \"DisplayName\": \"ABC\",\r\n      \"Value\": \"ABC\",\r\n      \"Type\": 0,\r\n      \"Range\": {\r\n        \"Lower\": \"ABC\",\r\n        \"Upper\": \"ABC\"\r\n      },\r\n      \"MaxStringLength\": 123,\r\n      \"Options\": [\r\n        {\r\n          \"Value\": \"ABC\",\r\n          \"Display\": \"ABC\",\r\n          \"Count\": 123\r\n        },\r\n        {\r\n          \"Value\": \"ABC\",\r\n          \"Display\": \"ABC\",\r\n          \"Count\": 123\r\n        }\r\n      ],\r\n      \"Units\": [\r\n        {\r\n          \"Display\": \"ABC\",\r\n          \"Multiplier\": 123.0\r\n        },\r\n        {\r\n          \"Display\": \"ABC\",\r\n          \"Multiplier\": 123.0\r\n        }\r\n      ],\r\n      \"Unit\": \"ABC\",\r\n      \"IsRequiredForSell\": false,\r\n      \"GroupName\": \"ABC\",\r\n      \"DisplayValue\": \"ABC\"\r\n    },\r\n    {\r\n      \"Name\": \"ABC\",\r\n      \"DisplayName\": \"ABC\",\r\n      \"Value\": \"ABC\",\r\n      \"Type\": 0,\r\n      \"Range\": {\r\n        \"Lower\": \"ABC\",\r\n        \"Upper\": \"ABC\"\r\n      },\r\n      \"MaxStringLength\": 123,\r\n      \"Options\": [\r\n        {\r\n          \"Value\": \"ABC\",\r\n          \"Display\": \"ABC\",\r\n          \"Count\": 123\r\n        },\r\n        {\r\n          \"Value\": \"ABC\",\r\n          \"Display\": \"ABC\",\r\n          \"Count\": 123\r\n        }\r\n      ],\r\n      \"Units\": [\r\n        {\r\n          \"Display\": \"ABC\",\r\n          \"Multiplier\": 123.0\r\n        },\r\n        {\r\n          \"Display\": \"ABC\",\r\n          \"Multiplier\": 123.0\r\n        }\r\n      ],\r\n      \"Unit\": \"ABC\",\r\n      \"IsRequiredForSell\": false,\r\n      \"GroupName\": \"ABC\",\r\n      \"DisplayValue\": \"ABC\"\r\n    }\r\n  ],\r\n  \"IsClearance\": false,\r\n  \"ExternalReferenceId\": \"ABC\",\r\n  \"Contacts\": [\r\n    {\r\n      \"FullName\": \"ABC\",\r\n      \"PhoneNumber\": \"ABC\",\r\n      \"AlternatePhoneNumber\": \"ABC\",\r\n      \"EMail\": \"ABC\",\r\n      \"BrandingImageId\": 123,\r\n      \"AgentId\": \"ABC\",\r\n      \"AgencyName\": \"ABC\",\r\n      \"ShouldContact\": 0\r\n    },\r\n    {\r\n      \"FullName\": \"ABC\",\r\n      \"PhoneNumber\": \"ABC\",\r\n      \"AlternatePhoneNumber\": \"ABC\",\r\n      \"EMail\": \"ABC\",\r\n      \"BrandingImageId\": 123,\r\n      \"AgentId\": \"ABC\",\r\n      \"AgencyName\": \"ABC\",\r\n      \"ShouldContact\": 0\r\n    }\r\n  ],\r\n  \"ReturnListingDetails\": false,\r\n  \"DonationRecipient\": 0,\r\n  \"CatalogueId\": \"ABC\",\r\n  \"RemainingGalleryPlusRelists\": 123,\r\n  \"PromotionId\": 123,\r\n  \"ExcludeFromShippingPromotion\": false,\r\n  \"SKU\": \"ABC\",\r\n  \"AvailablePromotions\": [\r\n    {\r\n      \"Id\": 123,\r\n      \"Name\": \"ABC\",\r\n      \"Description\": \"ABC\",\r\n      \"LongDescription\": \"ABC\",\r\n      \"Price\": 123.0,\r\n      \"OriginalPrice\": 123.0,\r\n      \"Recommended\": false,\r\n      \"MinimumPhotoCount\": 123,\r\n      \"DiscountDescription\": \"ABC\",\r\n      \"DiscountStartDate\": \"ABC\",\r\n      \"DiscountEndDate\": \"ABC\",\r\n      \"DiscountDisclaimer\": \"ABC\",\r\n      \"GoodFor2RelistsFee\": 123.0\r\n    },\r\n    {\r\n      \"Id\": 123,\r\n      \"Name\": \"ABC\",\r\n      \"Description\": \"ABC\",\r\n      \"LongDescription\": \"ABC\",\r\n      \"Price\": 123.0,\r\n      \"OriginalPrice\": 123.0,\r\n      \"Recommended\": false,\r\n      \"MinimumPhotoCount\": 123,\r\n      \"DiscountDescription\": \"ABC\",\r\n      \"DiscountStartDate\": \"ABC\",\r\n      \"DiscountEndDate\": \"ABC\",\r\n      \"DiscountDisclaimer\": \"ABC\",\r\n      \"GoodFor2RelistsFee\": 123.0\r\n    }\r\n  ],\r\n  \"ImmutableFields\": [\r\n    \"ABC\",\r\n    \"ABC\"\r\n  ],\r\n  \"GeographicLocation\": {\r\n    \"Latitude\": 123.0,\r\n    \"Longitude\": 123.0,\r\n    \"Accuracy\": 0\r\n  },\r\n  \"WasPrice\": 123.0,\r\n  \"EmbeddedContent\": {\r\n    \"YouTubeVideoKey\": \"ABC\",\r\n    \"MatterportKey\": \"ABC\",\r\n    \"IStagingKey\": \"ABC\",\r\n    \"VimeoVideoKey\": \"ABC\",\r\n    \"DiakritFurnishKey\": \"ABC\",\r\n    \"DiakritStylerKey\": \"ABC\",\r\n    \"DiakritPanoramaKey\": \"ABC\",\r\n    \"VirtualToursCreatorKey\": \"ABC\",\r\n    \"Approved3DTourUrl\": \"ABC\"\r\n  },\r\n  \"IsBranded\": false,\r\n  \"ShortDescription\": \"ABC\",\r\n  \"ShippingCalculatorInputs\": {\r\n    \"IsBoxType\": false,\r\n    \"Width\": 123.0,\r\n    \"Height\": 123.0,\r\n    \"Depth\": 123.0,\r\n    \"IsSignatureRequired\": false,\r\n    \"PickupLocalityId\": 123,\r\n    \"IsRural\": false,\r\n    \"PackagingOption\": 1,\r\n    \"WeightOption\": 1,\r\n    \"FilterOption\": 0\r\n  },\r\n  \"AdditionalData\": {\r\n    \"BulletPoints\": [\r\n      \"ABC\",\r\n      \"ABC\"\r\n    ],\r\n    \"Tags\": [\r\n      {\r\n        \"Name\": \"ABC\"\r\n      },\r\n      {\r\n        \"Name\": \"ABC\"\r\n      }\r\n    ]\r\n  },\r\n  \"VariantDefinition\": {\r\n    \"OptionSets\": [\r\n      {\r\n        \"Name\": \"ABC\",\r\n        \"Values\": [\r\n          \"ABC\",\r\n          \"ABC\"\r\n        ]\r\n      },\r\n      {\r\n        \"Name\": \"ABC\",\r\n        \"Values\": [\r\n          \"ABC\",\r\n          \"ABC\"\r\n        ]\r\n      }\r\n    ],\r\n    \"Variants\": [\r\n      {\r\n        \"SKU\": \"ABC\",\r\n        \"Price\": 123.0,\r\n        \"IsClearance\": false,\r\n        \"WasPrice\": 123.0,\r\n        \"Quantity\": 123,\r\n        \"PhotoIds\": [\r\n          123,\r\n          123\r\n        ],\r\n        \"Photos\": [\r\n          {\r\n            \"Key\": 123,\r\n            \"Value\": {\r\n              \"Thumbnail\": \"ABC\",\r\n              \"List\": \"ABC\",\r\n              \"Medium\": \"ABC\",\r\n              \"Gallery\": \"ABC\",\r\n              \"Large\": \"ABC\",\r\n              \"FullSize\": \"ABC\",\r\n              \"PlusSize\": \"ABC\",\r\n              \"PhotoId\": 123,\r\n              \"OriginalWidth\": 123,\r\n              \"OriginalHeight\": 123\r\n            }\r\n          },\r\n          {\r\n            \"Key\": 123,\r\n            \"Value\": {\r\n              \"Thumbnail\": \"ABC\",\r\n              \"List\": \"ABC\",\r\n              \"Medium\": \"ABC\",\r\n              \"Gallery\": \"ABC\",\r\n              \"Large\": \"ABC\",\r\n              \"FullSize\": \"ABC\",\r\n              \"PlusSize\": \"ABC\",\r\n              \"PhotoId\": 123,\r\n              \"OriginalWidth\": 123,\r\n              \"OriginalHeight\": 123\r\n            }\r\n          }\r\n        ],\r\n        \"Options\": [\r\n          {\r\n            \"Name\": \"ABC\",\r\n            \"Value\": \"ABC\"\r\n          },\r\n          {\r\n            \"Name\": \"ABC\",\r\n            \"Value\": \"ABC\"\r\n          }\r\n        ],\r\n        \"Attributes\": [\r\n          {\r\n          },\r\n          {\r\n          }\r\n        ],\r\n        \"ListingId\": 123,\r\n        \"ExternalReferenceId\": \"ABC\",\r\n        \"ProductSpecification\": {\r\n          \"GTIN\": \"ABC\",\r\n          \"Brand\": \"ABC\",\r\n          \"ManufacturerCode\": \"ABC\"\r\n        }\r\n      },\r\n      {\r\n        \"SKU\": \"ABC\",\r\n        \"Price\": 123.0,\r\n        \"IsClearance\": false,\r\n        \"WasPrice\": 123.0,\r\n        \"Quantity\": 123,\r\n        \"PhotoIds\": [\r\n          123,\r\n          123\r\n        ],\r\n        \"Photos\": [\r\n          {\r\n            \"Key\": 123,\r\n            \"Value\": {\r\n              \"Thumbnail\": \"ABC\",\r\n              \"List\": \"ABC\",\r\n              \"Medium\": \"ABC\",\r\n              \"Gallery\": \"ABC\",\r\n              \"Large\": \"ABC\",\r\n              \"FullSize\": \"ABC\",\r\n              \"PlusSize\": \"ABC\",\r\n              \"PhotoId\": 123,\r\n              \"OriginalWidth\": 123,\r\n              \"OriginalHeight\": 123\r\n            }\r\n          },\r\n          {\r\n            \"Key\": 123,\r\n            \"Value\": {\r\n              \"Thumbnail\": \"ABC\",\r\n              \"List\": \"ABC\",\r\n              \"Medium\": \"ABC\",\r\n              \"Gallery\": \"ABC\",\r\n              \"Large\": \"ABC\",\r\n              \"FullSize\": \"ABC\",\r\n              \"PlusSize\": \"ABC\",\r\n              \"PhotoId\": 123,\r\n              \"OriginalWidth\": 123,\r\n              \"OriginalHeight\": 123\r\n            }\r\n          }\r\n        ],\r\n        \"Options\": [\r\n          {\r\n            \"Name\": \"ABC\",\r\n            \"Value\": \"ABC\"\r\n          },\r\n          {\r\n            \"Name\": \"ABC\",\r\n            \"Value\": \"ABC\"\r\n          }\r\n        ],\r\n        \"Attributes\": [\r\n          {\r\n          },\r\n          {\r\n          }\r\n        ],\r\n        \"ListingId\": 123,\r\n        \"ExternalReferenceId\": \"ABC\",\r\n        \"ProductSpecification\": {\r\n          \"GTIN\": \"ABC\",\r\n          \"Brand\": \"ABC\",\r\n          \"ManufacturerCode\": \"ABC\"\r\n        }\r\n      }\r\n    ]\r\n  },\r\n  \"SecondCategory\": \"ABC\",\r\n  \"PremiumPackageCode\": \"ABC\",\r\n  \"ProductSpecification\": {\r\n  },\r\n  \"ListingExtras\": [\r\n    {\r\n      \"Id\": 123,\r\n      \"Name\": \"ABC\",\r\n      \"Variant\": \"ABC\",\r\n      \"StartDate\": \"\\/Date(1514764800)\\/\",\r\n      \"EndDate\": \"\\/Date(1514764800)\\/\",\r\n      \"Description\": \"ABC\",\r\n      \"Duration\": 123,\r\n      \"Delay\": 123\r\n    },\r\n    {\r\n      \"Id\": 123,\r\n      \"Name\": \"ABC\",\r\n      \"Variant\": \"ABC\",\r\n      \"StartDate\": \"\\/Date(1514764800)\\/\",\r\n      \"EndDate\": \"\\/Date(1514764800)\\/\",\r\n      \"Description\": \"ABC\",\r\n      \"Duration\": 123,\r\n      \"Delay\": 123\r\n    }\r\n  ],\r\n  \"ListingExtrasLedger\": [\r\n    {\r\n    },\r\n    {\r\n    }\r\n  ],\r\n  \"HasGoodFor2Relists\": false,\r\n  \"IsOffersAllowed\": false,\r\n  \"IsCounterOffersAllowed\": false,\r\n  \"MaximumOffers\": 123,\r\n  \"ShippingTemplateId\": 123,\r\n  \"Photos\": [\r\n    {\r\n      \"Key\": 123,\r\n      \"Value\": {\r\n      }\r\n    },\r\n    {\r\n      \"Key\": 123,\r\n      \"Value\": {\r\n      }\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.trademe.co.nz/v1/Selling.json",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trademe",
+						"co",
+						"nz"
+					],
+					"path": [
+						"v1",
+						"Selling.json"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				},
+				"description": "Request with Authorizaton Token"
+			},
+			"response": []
+		}
+	]
+}
