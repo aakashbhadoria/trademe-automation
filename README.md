@@ -1,4 +1,4 @@
-# Title: Enhance Automation Test 
+# Title: Trademe Automation Test 
 #### _Automation framework for trademe Web and API Tests_
 ![trademe](/references/trademe.png)
 
