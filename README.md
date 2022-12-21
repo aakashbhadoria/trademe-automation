@@ -18,7 +18,3 @@ All the project details are captured in [Project Details](/references/Project-De
 #### Execution Report:
 Execution report can be found under [Execution Report](/references/cucumber-reports.html)
 
-#### _Note: Sanbox was unavailable for validation of APIs_
-![trademe](/references/SandBox_Unavailable.png)
-
-
